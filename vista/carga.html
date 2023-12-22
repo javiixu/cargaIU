@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carga</title>
+  <style>
+    body {
+      background-color: #f5f5dc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh; 
+    }
+
+    label {
+      margin-bottom: 10px;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    button {
+      margin-bottom: 10px;
+    }
+
+    #resultadoCarga {
+      width: 500px;
+      height: 200px;
+      margin-top: 20px;
+      background-color: white; 
+      overflow-y: auto; 
+      padding: 10px; 
+    }
+  </style>
+</head>
+<body>
+  <h1 style="margin-bottom: 10px;">Carga del almacén de datos</h1>
+
+  <form>
+    <p>Seleccionar fuente:</p>
+    <label>
+      <input type="checkbox" name="all" onclick="seleccionarTodas()"> Seleccionar todas
+    </label>
+    <br>
+    <label>
+      <input type="checkbox" name="mur" onchange="verificarTodas()"> Murcia
+    </label>
+    <br>
+    <label>
+      <input type="checkbox" name="vlc" onchange="verificarTodas()"> Comunidad Valenciana
+    </label>
+    <br>
+    <label>
+      <input type="checkbox" name="cat" onchange="verificarTodas()"> Cataluña
+    </label>
+    <br>
+
+    <button style="margin-top: 10px;" type="button">Borrar</button>
+    <button style="margin-top: 10px;" type="button">Cargar</button>
+
+    <p>Resultados de la carga:</p>
+    <div id="resultadoCarga" contenteditable="false"></div>
+
+    <script>
+      function seleccionarTodas() {
+        const checkboxSeleccionarTodas = document.querySelector('input[name="all"]');
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]:not([name="all"])');
+
+        checkboxes.forEach(checkbox => {
+          checkbox.checked = checkboxSeleccionarTodas.checked;
+        });
+      }
+
+      function verificarTodas() {
+        const checkboxSeleccionarTodas = document.querySelector('input[name="all"]');
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]:not([name="all"])');
+
+        const todasSeleccionadas = Array.from(checkboxes).every(checkbox => checkbox.checked);
+
+        checkboxSeleccionarTodas.checked = todasSeleccionadas;
+      }
+    </script>
+  </form>
+</body>
+</html>
