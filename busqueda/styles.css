@@ -1,0 +1,71 @@
+/* styles.css */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5dc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-top: 50px;
+}
+
+label {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+button {
+    margin-bottom: 0px;
+    margin-top: 20px;
+}
+
+#resultadoCarga {
+    font-size: small;
+    width: 700px;
+    height: 1000px;
+    background-color: white;
+    overflow-y: auto;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#formularioBusqueda {
+    display: flex;
+    flex-direction: column;
+}
+
+#div-content {
+    display: flex;
+}
+
+.tabla-resultados {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-resultados th,
+.tabla-resultados td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.tabla-resultados th {
+    background-color: #f2f2f2;
+}
+
+#mapa {
+    width: 400px; 
+    height: 300px; 
+    margin-left: 100px;
+}

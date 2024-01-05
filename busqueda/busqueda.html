@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busqueda</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="styles.css" />    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+    <h1>Buscador de centros educativos</h1>
+
+    <div id="div-content">        
+
+        <form id="formularioBusqueda">
+            <label for="provincia">Provincia:</label>
+            <input type="text" id="provincia" name="provincia" />
+    
+            <label for="localidad">Localidad:</label>
+            <input type="text" id="localidad" name="localidad" />
+    
+            <label for="codigoPostal">Código Postal:</label>
+            <input type="text" id="codigoPostal" name="codigoPostal" />
+    
+            <label for="tipo">Tipo:</label>
+            <select id="tipo" name="tipo">
+                <option value=""></option>
+                <option value="publico">Público</option>
+                <option value="privado">Privado</option>
+                <option value="concertado">Concertado</option>                
+            </select>
+    
+            <button type="button" onclick="buscarCentros()">Buscar</button>
+        </form>        
+
+        <div id="mapa"></div>
+
+    </div>
+
+    <p>Resultados de la carga:</p>
+    <div id="resultadoCarga" contenteditable="false"></div>     
+
+    
+    <script src="script.js"></script>
+</body>
+</html>
